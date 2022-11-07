@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="LruCacheTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-12-11T23:01:54" hostname="MacBook-Pro-Aleksandr-3.local" time="0.134">
+  <properties/>
+  <testcase name="stressTest()" classname="LruCacheTest" time="0.128"/>
+  <testcase name="setAndGet()" classname="LruCacheTest" time="0.003"/>
+  <testcase name="eviction()" classname="LruCacheTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
