@@ -1,7 +1,6 @@
 package ru.aslastin;
 
 import org.junit.jupiter.api.Test;
-import ru.aslastin.hw1.LruCache;
 
 import java.util.Random;
 

@@ -1,7 +1,6 @@
 package ru.aslastin;
 
 import org.junit.jupiter.api.Test;
-import ru.aslastin.hw1.KeyValueLinkedList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -47,10 +46,10 @@ public class KeyValueLinkedListTest {
         assertFrontBackSize(list, 1, 3, 3);
 
         list.remove(middle);
-        assertFrontBackSize(list,1, 3, 2);
+        assertFrontBackSize(list, 1, 3, 2);
 
         list.remove(front);
-        assertFrontBackSize(list,3, 3, 1);
+        assertFrontBackSize(list, 3, 3, 1);
 
         list.remove(back);
         assertEmpty(list);

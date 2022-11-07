@@ -1,4 +1,4 @@
-package ru.aslastin.hw1;
+package ru.aslastin;
 
 public class KeyValueLinkedList<K, V> {
     private final Node<K, V> dummy;

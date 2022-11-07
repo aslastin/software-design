@@ -1,4 +1,4 @@
-package ru.aslastin.hw1;
+package ru.aslastin;
 
 import java.util.HashMap;
 import java.util.Map;
