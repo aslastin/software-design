@@ -1,4 +1,4 @@
-# Reverse Polish Notation calculator
+# HW6: Reverse Polish Notation calculator
 
 ## Objective
 
