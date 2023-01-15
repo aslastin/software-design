@@ -1,8 +1,10 @@
 package ru.aslastin;
 
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import ru.aslastin.service.ProductService;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
@@ -16,30 +18,31 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.TimeUnit;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
-class MainTest {
-    final static String SERVER_URL = "http://localhost:8081";
+class ProductServiceTest {
+    final static int PORT = 8082;
+    final static String SERVER_URL = "http://localhost:" + PORT;
     final static String DATABASE_PATH = "jdbc:sqlite:test.db";
 
-    static Thread serverThread;
+    static ProductService productService;
 
     @BeforeAll
-    static void beforeAll() throws InterruptedException {
-        serverThread = new Thread(() -> {
-            try {
-                Main.main(new String[]{});
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-        });
+    static void beforeAll() throws Exception {
+        productService = new ProductService(PORT, DATABASE_PATH);
 
-        serverThread.start();
+        productService.start().get(10, TimeUnit.SECONDS);
 
         // some extra time for setup
         Thread.sleep(3000);
+    }
+
+    @AfterAll
+    static void afterAll() throws Exception {
+        productService.stop().get(10, TimeUnit.SECONDS);
     }
 
     ServiceInfo serviceInfo;
