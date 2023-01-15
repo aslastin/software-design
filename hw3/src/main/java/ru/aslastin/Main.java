@@ -1,43 +1,26 @@
 package ru.aslastin;
 
-import org.eclipse.jetty.server.Server;
-import org.eclipse.jetty.servlet.ServletContextHandler;
-import org.eclipse.jetty.servlet.ServletHolder;
-import ru.aslastin.servlet.AddProductServlet;
-import ru.aslastin.servlet.GetProductsServlet;
-import ru.aslastin.servlet.QueryServlet;
+import ru.aslastin.service.ProductService;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.Statement;
+import java.util.concurrent.TimeUnit;
 
-/**
- * @author akirakozov
- */
 public class Main {
-    public static void main(String[] args) throws Exception {
-        try (Connection c = DriverManager.getConnection("jdbc:sqlite:test.db")) {
-            String sql = "CREATE TABLE IF NOT EXISTS PRODUCT" +
-                    "(ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
-                    " NAME           TEXT    NOT NULL, " +
-                    " PRICE          INT     NOT NULL)";
-            Statement stmt = c.createStatement();
+    private final static int PORT = 8081;
+    private final static String DATABASE_PATH = "jdbc:sqlite:test.db";
 
-            stmt.executeUpdate(sql);
-            stmt.close();
+    private Main() {
+        // just main method
+    }
+
+    public static void main(String[] args) throws Exception {
+        int port = PORT;
+        String databasePath = DATABASE_PATH;
+
+        if (args != null && args.length == 2) {
+            port = Integer.parseInt(args[0]);
+            databasePath = args[1];
         }
 
-        Server server = new Server(8081);
-
-        ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
-        context.setContextPath("/");
-        server.setHandler(context);
-
-        context.addServlet(new ServletHolder(new AddProductServlet()), "/add-product");
-        context.addServlet(new ServletHolder(new GetProductsServlet()),"/get-products");
-        context.addServlet(new ServletHolder(new QueryServlet()),"/query");
-
-        server.start();
-        server.join();
+        new ProductService(port, databasePath).start().get(10, TimeUnit.SECONDS);
     }
 }
