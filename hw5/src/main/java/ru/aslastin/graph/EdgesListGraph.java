@@ -12,6 +12,11 @@ public class EdgesListGraph implements Graph, DrawableGraph {
     }
 
     @Override
+    public boolean hasEdge(int from, int to) {
+        return edges.contains(new Edge(from, to));
+    }
+
+    @Override
     public void addEdge(int from, int to) {
         edges.add(new Edge(from, to));
     }

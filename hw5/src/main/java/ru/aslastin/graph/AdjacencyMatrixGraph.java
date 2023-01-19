@@ -19,6 +19,13 @@ public class AdjacencyMatrixGraph implements Graph, DrawableGraph {
     }
 
     @Override
+    public boolean hasEdge(int from, int to) {
+        checkFromTo(from, to);
+
+        return matrix[from][to];
+    }
+
+    @Override
     public void addEdge(int from, int to) {
         checkFromTo(from, to);
 

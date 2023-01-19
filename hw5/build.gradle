@@ -1,9 +1,19 @@
 plugins {
     id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.8'
 }
+
+sourceCompatibility = 17
+targetCompatibility = 17
 
 group 'ru.aslastin'
 version '1.0-SNAPSHOT'
+
+javafx {
+    version = "17"
+    modules = [ 'javafx.controls', 'javafx.fxml']
+}
 
 repositories {
     mavenCentral()
