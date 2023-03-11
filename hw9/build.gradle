@@ -1,0 +1,24 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'application'
+
+group 'ru.aslastin'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    implementation 'com.typesafe.akka:akka-actor-typed_2.13:2.7.0'
+    implementation 'ch.qos.logback:logback-classic:1.2.9'
+    testImplementation 'com.typesafe.akka:akka-actor-testkit-typed_2.13:2.7.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testImplementation 'com.xebialabs.restito:restito:1.1.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}
