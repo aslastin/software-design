@@ -1,0 +1,17 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: fitness-center
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+
+server:
+  port: 9090
+  servlet:
+    context-path: /${spring.application.name}
+  error:
+    include-stacktrace: always
+    include-message: always
