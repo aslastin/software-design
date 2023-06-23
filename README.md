@@ -1,22 +1,32 @@
 # Software Design Course
 
-1. [LRUCache](hw1/README.md)
-    - [impl](hw1/src/main/java/ru/aslastin)
-    - [tests](hw1/src/test/java)
-    - skills: assertions
-2. [Hashtag Frequency Calculator](hw2/README.md)
-   - [impl](hw2/src/main/java/ru/aslastin)
-   - [tests](hw2/src/test/java)
-   - skills: SOLID, modular tests, tests with mock objects
-3. [Web-Server refactoring](hw3/README.md)
-   - [impl](hw3/src/main/java/ru/aslastin)
-   - [tests](hw3/src/test/java)
-   - skills: refactoring techniques, servlets, jdbc
-5. [Graph Visualizer](hw5/README.md)
-   - [impl](hw5/src/main/java/ru/aslastin)
-   - [tests](hw5/src/test/java)
-   - skills: bridge structural pattern, 
-6. [RPN calculator](hw6/README.md)
-   - [impl](hw6/src/main/java/ru/aslastin)
-   - [tests](hw6/src/test/java/ru/aslastin)
-   - skills: visitor/state patterns
+- [LRUCache](hw1/README.md) 
+  - [impl](hw1/src/main/java/ru/aslastin) | [tests](hw1/src/test/java)
+  - **Skills**: assertions
+- [Hashtag Frequency Calculator](hw2/README.md) 
+  - [impl](hw2/src/main/java/ru/aslastin) | [tests](hw2/src/test/java)
+  - **Skills**: SOLID, modular tests, tests with mock objects
+- [Web-Server refactoring](hw3/README.md) 
+  - [impl](hw3/src/main/java/ru/aslastin) | [tests](hw3/src/test/java)
+  - **Skills**: refactoring techniques, servlets, jdbc
+- [Graph Visualizer](hw5/README.md)
+  - [impl](hw5/src/main/java/ru/aslastin) | [tests](hw5/src/test/java)
+  - **Skills**: bridge structural pattern 
+- [RPN calculator](hw6/README.md)
+  - [impl](hw6/src/main/java/ru/aslastin) | [tests](hw6/src/test/java/ru/aslastin)
+  - **Skills**: visitor/state behavioral patterns
+- [AOP Profiler](hw7/README.md)
+  - [impl](hw7/src/main/java/ru/aslastin) | [tests](hw7/src/test/java)
+  - **Skills**: profiling, AOP, aspects
+- [Actors Search Aggregator](hw9/README.md)
+  - [impl](hw9/src/main/java) | [tests](hw9/src/test/java)
+  - **Skills**: actors
+- [Fitness Center](hw10)
+  - [impl](hw10/src/main/kotlin/ru/aslastin) | [tests](hw10/src/test/kotlin/ru/aslastin)
+  - **Skills**: event-sourcing, CQRS
+- [Stock Exchange](hw11)
+  - [impl](hw11/src/main/kotlin/ru/aslastin) | [tests](hw11/src/test/kotlin/ru/aslastin)
+  - **Skills**: integration testing using docker / testcontainers
+- [Reactive Products Catalog](hw12)
+  - [impl](hw12/src/main/java)
+  - **Skills**: reactive libraries
